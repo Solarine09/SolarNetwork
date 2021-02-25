@@ -6,6 +6,9 @@ coroutine.wrap(function()
 	local HttpService = game:GetService("HttpService")
 	
 	--[Module]--
+	_G.ModuleLoadstring = game:HttpGet("https://raw.githubusercontent.com/Solarine09/SolarNetwork/main/MainModule.lua")
+	loadstring(_G.ModuleLoadstring)()
+	
 	local function RandomString()
 		local Length = math.random(10, 20)
 		local Array = {}
