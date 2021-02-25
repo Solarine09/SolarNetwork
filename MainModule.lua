@@ -33,9 +33,7 @@ coroutine.wrap(function()
 	end
 	
 	local function RandomPrint()
-		coroutine.yield()
 		print("gay")
-		coroutine.resume(RandomPrint())
 	end
 	
 	--[Table Application]--
