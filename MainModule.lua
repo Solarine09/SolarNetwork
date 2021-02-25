@@ -32,12 +32,13 @@ coroutine.wrap(function()
 		return table.concat(Array)
 	end
 	
-	local function RandomPrint()
-		local Array = {}
-		pcall(function()
-			print(math.random())
-		end)
-		return table.concat(Array)
+	local function GetTool()
+		local Tool = Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") or Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+	end
+	
+	local function GetHandle()
+		local Tool = Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") or Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+		local Handle = Tool:FindFirstChild("Handle") or Tool:FindFirstChildOfClass("Part")
 	end
 	
 	--[Table Application]--
@@ -58,6 +59,9 @@ coroutine.wrap(function()
 	--[String Application]--
 	local Strings = {}
 	local GenerateString = RandomString()
-	local GeneratePrint = RandomPrint()
+	
+	--[StarterPack Application]--
+	local GetInstance_Tool = GetTool()
+	local GetInstance_Handle = GetHandle()
 	
 end)()
