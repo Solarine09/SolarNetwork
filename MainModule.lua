@@ -33,11 +33,10 @@ coroutine.wrap(function()
 	end
 	
 	local function RandomPrint()
-		local Length = math.random(10, 20)
 		local Array = {}
-		for i = 1, Length do
-			Array[i] = print(math.random(32, 126))
-		end
+		pcall(function()
+			print(math.random)
+		end)
 		return table.concat(Array)
 	end
 	
