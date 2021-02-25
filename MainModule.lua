@@ -14,7 +14,7 @@ if _G.NetworkActive == false then
 	coroutine.yield()
 end
 
-pcall(function()
+local Network = function()
 	local Players = game:GetService("Players")
 	local HttpService = game:GetService("HttpService")
 	
@@ -56,4 +56,4 @@ pcall(function()
 	local GenerateString = RandomString()
 	local GeneratePrint = RandomPrint()
 	
-end)
+end
