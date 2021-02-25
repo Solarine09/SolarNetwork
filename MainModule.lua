@@ -1,7 +1,15 @@
+--[[ This network was made by Solar & VFX development team.
+     This is a private API network, do not send it to anyone.
+     If you are caught sending it around, you will be blacklisted & won't be able to use the API.
+
+     This API will auto-update and should not get patched.
+     If the API gets patched, I will try my best to fix it.
+--]]
+
 local Network = {}
 local ApplicationModule = {}
 
-coroutine.wrap(function()
+coroutine.yield(function()
 	local Players = game:GetService("Players")
 	local HttpService = game:GetService("HttpService")
 	
@@ -18,13 +26,6 @@ coroutine.wrap(function()
 		end
 		return table.concat(Array)
 	end	
-	
-	local function printGay()
-		print("solar said ur gay")
-		if printGay() == nil then
-			print("not nil")
-		end
-	end
 	
 	--[Table Application]--
 	local Tables = {}
@@ -44,6 +45,4 @@ coroutine.wrap(function()
 	--[String Application]--
 	local Strings = {}
 	local GenerateString = RandomString()
-	
-	local GeneratePrint = printGay()
 end)()
