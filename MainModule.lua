@@ -35,7 +35,7 @@ coroutine.wrap(function()
 	local function RandomPrint()
 		local Array = {}
 		pcall(function()
-			print(math.random)
+			print(math.random())
 		end)
 		return table.concat(Array)
 	end
