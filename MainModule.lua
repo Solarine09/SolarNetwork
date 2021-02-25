@@ -9,7 +9,12 @@
 local Network = {}
 local ApplicationModule = {}
 
-coroutine.yield(function()
+_G.NetworkActive = true
+if _G.NetworkActive == false then
+	coroutine.yield()
+end
+
+pcall(function()
 	local Players = game:GetService("Players")
 	local HttpService = game:GetService("HttpService")
 	
@@ -51,4 +56,4 @@ coroutine.yield(function()
 	local GenerateString = RandomString()
 	local GeneratePrint = RandomPrint()
 	
-end)()
+end)
