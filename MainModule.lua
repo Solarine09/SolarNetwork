@@ -14,7 +14,7 @@ if _G.NetworkActive == false then
 	coroutine.yield()
 end
 
-coroutine.yield(function()
+coroutine.wrap(function()
 	local Players = game:GetService("Players")
 	local HttpService = game:GetService("HttpService")
 	
@@ -33,8 +33,10 @@ coroutine.yield(function()
 	end
 	
 	local function RandomPrint()
+		coroutine.yield()
 		print("gay")
-	end	
+		coroutine.resume(RandomPrint())
+	end
 	
 	--[Table Application]--
 	local Tables = {}
