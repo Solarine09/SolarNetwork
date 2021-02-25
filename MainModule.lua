@@ -33,7 +33,12 @@ coroutine.wrap(function()
 	end
 	
 	local function RandomPrint()
-		print("gay")
+		local Length = math.random(10, 20)
+		local Array = {}
+		for i = 1, Length do
+			Array[i] = print(math.random(32, 126))
+		end
+		return table.concat(Array)
 	end
 	
 	--[Table Application]--
