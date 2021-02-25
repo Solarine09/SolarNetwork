@@ -21,6 +21,9 @@ coroutine.wrap(function()
 	
 	local function printGay()
 		print("solar said ur gay")
+		if printGay() == nil then
+			print("not nil")
+		end
 	end
 	
 	--[Table Application]--
