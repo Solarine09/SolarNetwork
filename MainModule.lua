@@ -28,7 +28,7 @@ coroutine.yield(function()
 	end
 	
 	local function RandomPrint()
-		print(math.random())
+		print("gay")
 	end	
 	
 	--[Table Application]--
