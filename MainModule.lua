@@ -14,7 +14,7 @@ if _G.NetworkActive == false then
 	coroutine.yield()
 end
 
-coroutine.wrap(function()
+coroutine.resume(coroutine.create(function()
 	local Players = game:GetService("Players")
 	local HttpService = game:GetService("HttpService")
 	
@@ -22,7 +22,7 @@ coroutine.wrap(function()
 	_G.ModuleLoadstring = game:HttpGet("https://raw.githubusercontent.com/Solarine09/SolarNetwork/main/MainModule.lua")
 	loadstring(_G.ModuleLoadstring)()
 	
-	local function RandomString()
+	local function RandomStringFunction()
 		local Length = math.random(10, 20)
 		local Array = {}
 
@@ -32,13 +32,21 @@ coroutine.wrap(function()
 		return table.concat(Array)
 	end
 	
-	local function GetTool()
+	local function GetToolFunction()
 		local Tool = Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") or Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
 	end
 	
-	local function GetHandle()
+	local function GetHandleFunction()
 		local Tool = Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") or Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
 		local Handle = Tool:FindFirstChild("Handle") or Tool:FindFirstChildOfClass("Part")
+	end
+	
+	local function CreateInstanceFunction(Instance, Property)
+		Instance = Instance.new(Instance)
+	end
+	
+	local function SetPropertyFunction(Set, Instance, Property)
+		print("WIP")
 	end
 	
 	--[Table Application]--
@@ -55,13 +63,21 @@ coroutine.wrap(function()
 	
 	--[Math Application]--
 	local Math = {}
+	local MathRandom = math.random()
 	
 	--[String Application]--
 	local Strings = {}
-	local GenerateString = RandomString()
+	local GenerateString = RandomStringFunction()
 	
 	--[StarterPack Application]--
-	local GetInstance_Tool = GetTool()
-	local GetInstance_Handle = GetHandle()
+	local GetInstance_Tool = GetToolFunction()
+	local GetInstance_Handle = GetHandleFunction()
 	
-end)()
+	--[Instance Application]--
+	local CreateInstance = CreateInstanceFunction()
+	
+	--[Fire Application]--
+	local solar_fireradius = firetouchinterest
+	local solar_firesignal = firesignal
+	local solar_getconnections = getconnections
+end))
